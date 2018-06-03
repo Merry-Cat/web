@@ -1,0 +1,6 @@
+1.hover父节点变子节点的hover效果 li:hover span{
+	color: red;
+}
+2.text-overflow: ellipsis;//文本溢出以省略号的形式隐藏
+3.为某个节点添加多个Class类名：Node.classList.add（“class1”，"class2"）;
+4.设置节点的各个属性只需要.属性名就行了，例如：Node.title = bilibili ;

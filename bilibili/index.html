@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>bilibili弹幕视频</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<div class="login">
+    <input type="text" class="content" placeholder="炮姐" /><button onclick="showName()">登录</button>
+</div>
+<div id="showName"></div>
+<div class="wrap">
+    <div class="video1" onfocus="spaceClick()">
+        <!-- <video width="700" height="500" src="video/pj.mp4" poster="video/pj.mp4" autoplay="false" preload="auto" loop="false" >
+        </video> -->
+        <video autobuffer  controls loop  onclick="playPause()">
+            <source src="video/pj.mp4">
+        </video>
+        <div class="fifter"><span  class=" st">您的弹幕长度大于100</span></div>
+    </div>
+    <div class="cont">
+        <input  class="cont1" type="text" placeholder="你可以在这里输入弹幕吐槽哦(〜￣△￣)〜" onkeydown="clik()" />
+        <div class="liyi_div"><span class="liyi">弹幕礼仪></span></div>
+        <div class="btn">发送</div>
+    </div>
+    <div class="barrage">
+        <div class="bar-num"><strong>52000</strong><span>人正在看，3000条弹幕</span><img src="imgs/setting.png" alt="" /></div>
+        <div class="bar-title">
+            <div class="title-comand"><span>推荐视频</span></div>
+            <div class="title-bar-list title-comand "><span class="default">弹幕列表</span></div>
+            <div class="title-ban title-comand"><span>屏蔽设定</span></div>
+        </div>
+        <div class="bar-cont">
+            <div class="bar-cont-title">
+                <div class="bar-time">时间</div>
+                <div class="bar-content">弹幕内容</div>
+                <div class="send-time">发送时间</div>
+            </div>
+            <ul class="danmuku">
+               <!--  <li class=danmuku-list>
+                   <span class="danmuku-time bar-time">吃饭了</span>
+                   <span class="danmuku-content bar-content" title="">弹幕内容弹幕内容弹幕内容弹幕内容</span>
+                   <span class="danmuku-send-time send-time">发送时间</span>
+               </li> -->
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+</body>
+<script type="text/javascript" src="js/action.js"></script>
+<script>
+// Check browser support
+
+function showName(){
+    var user = document.querySelector("input");
+if (typeof(Storage) !== "undefined") {
+    // Store
+    localStorage.setItem("login", user.value);
+    // Retrieve
+    document.getElementById("showName").innerHTML = "您好，"+localStorage.getItem("login");
+} else {
+    document.getElementById("showName").innerHTML = "抱歉！您的浏览器不支持 Web Storage ...";
+}
+}
+</script>
+</html>
